@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'eventFinderApp.apps.EventfinderappConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'freeeventfinder', # you will need to create this db
-        'USER': '', # enter your user name here
-        'PASSWORD': '',
+        'USER': 'postgres', # enter your user name here
+        'PASSWORD': '#3LeND0g311',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -122,3 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = '/event-finder/'
+
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'

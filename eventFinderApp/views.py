@@ -20,3 +20,7 @@ class EventView(generic.DetailView):
 
 def account(request):
     return render(request, 'eventFinderApp/account.html')
+
+class EventCreatorView(generic.DetailView):
+    # model = CreateEventForm
+    template_name = 'eventFinderApp/event_creator_form.html'
