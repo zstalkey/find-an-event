@@ -19,9 +19,3 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class CreateEventForm(ModelForm):
-    title = Event.title
-    location = Event.location
-    venue = Event.venue
-    start_time = Event.start_time
-    end_time = Event.end_time
