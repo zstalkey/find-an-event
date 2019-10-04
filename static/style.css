@@ -1,5 +1,5 @@
 html {
-    font-family: 'Manjari', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 body {
@@ -7,14 +7,28 @@ body {
 }
 
 h1 {
+    font-family: 'Rajdhani', sans-serif;
     font-size: 3rem;
-    color: #ff006f;
+    color: #f1d9a0;
     margin: 0;
 }
 
 h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
     margin: 0;
 }
+
+h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
+
+p {
+    font-family: 'Rajdhani', sans-serif;
+}
+
 
 header {
     display: flex;
@@ -25,18 +39,20 @@ header {
 }
 
 nav a {
+    font-family: 'Rajdhani', sans-serif;
     margin: 0 10px;
 }
 
 a {
-    color: #ff006f;
+    color: #f1d9a0;
 }
 
 #new-event {
+    font-family: 'Rajdhani', sans-serif;
     width: 100%;
-    background-color: #ff006f;
+    background-color: #f1d9a0;
     color: #fff;
-    border: 1px solid #ff006f;
+    border: 1px solid #f1d9a0;
     border-radius: 5px;
     font-size: 1.5rem;
     height: 50px;
@@ -48,7 +64,8 @@ a {
 }
 
 .details-box {
-    border: 1px solid #ff006f;
+    font-family: 'Rajdhani', sans-serif;
+    border: 1px solid #f1d9a0;
     border-radius: 5px;
     margin: 10px 0;
     padding: 10px;

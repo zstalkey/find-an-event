@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'django_filters',
+    'bootstrapform',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -81,7 +85,7 @@ WSGI_APPLICATION = 'eventFinderProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'freeeventfinder', # you will need to create this db
+        'NAME': 'cheapskates', # you will need to create this db
         'USER': 'postgres', # enter your user name here
         'PASSWORD': '#3LeND0g311',
         'HOST': 'localhost',
@@ -130,3 +134,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 LOGIN_REDIRECT_URL = 'eventFinderApp:index'
 LOGOUT_REDIRECT_URL = 'eventFinderApp:index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}

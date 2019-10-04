@@ -8,7 +8,20 @@
 <p></p>
 <p>Starts at: {{ event.start_time }}</p>
 <p>Ends at: {{ event.end_time }}</p>
+<p>Host: {{ event.host }}</p>
+<p>Category:</p>
 {% for category in event.categories.all %}
-    <p>Category: {{ category.name }}</p>
+<p>{{ category.name }}</p>
 {% endfor %}
+
+{% if user.is_authenticated %}
+   {% if user.username == event.host.username %}
+       <a href="{% url 'eventFinderApp:edit_event' event.id %}"><button id="edit_event">+ Edit Event</button></a>
+   {% else %}
+       <p>Only the host can edit this event. Please contact {{event.host.username}}.</p>
+       {% endif %}
+{% else %}
+   <p><a href="{% url 'login' %}">You must be logged in to edit events.</a></p>
+{% endif %}
+
 {% endblock %}

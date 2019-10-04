@@ -1,15 +1,22 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+
+<form method='GET'>
+    {{ filter.form|crispy }}
+    <button type='submit' class='btn bt-primary'>Search</button>
+</form>
 
     <a href="{% url 'eventFinderApp:event_creator_form' %}"><button id="new-event">+ Create new event</button></a>
     <h3>See what's on!</h3>
     {% if events_list %}
-        {% for event in events_list %}
+        {% for event in filter.qs %}
             {% include "./detailsBox.html" with event=event %}
         {% endfor %}
     {% else %}
         <p>No events are available.</p>
     {% endif %}
+
 
 {% endblock %}

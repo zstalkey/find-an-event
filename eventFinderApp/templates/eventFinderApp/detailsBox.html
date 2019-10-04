@@ -2,8 +2,10 @@
     <a href="{% url 'eventFinderApp:event' event.id %}">
         <p>{{ event.title }}</p>
         <p>{{ event.start_time }}</p>
+        <p>{{ event.end_time }}</p>
+        <p>{{ event.location }}</p>
         {% for category in event.categories.all %}
-            <p>{{ category.name }}</p>
+        <p>{{ category.name }}</p>
         {% endfor %}
     </a>
 </div>
