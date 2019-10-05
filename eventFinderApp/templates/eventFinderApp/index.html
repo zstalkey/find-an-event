@@ -4,6 +4,7 @@
 {% block content %}
 
 <form method='GET'>
+    {% csrf_token %}
     {{ filter.form|crispy }}
     <button type='submit' class='btn bt-primary'>Search</button>
 </form>
